@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.light {
+  color-scheme: light;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-200 dark:bg-dark-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded hover:bg-gray-500 dark:hover:bg-gray-500;
+}
+
+/* Article styles */
+.article-content {
+  @apply prose dark:prose-invert max-w-none;
+  line-height: 1.7;
+}
+
+.article-content h2 {
+  @apply text-2xl font-bold mt-6 mb-4 text-gray-900 dark:text-white;
+}
+
+.article-content h3 {
+  @apply text-xl font-bold mt-4 mb-3 text-gray-800 dark:text-gray-100;
+}
+
+.article-content p {
+  @apply mb-4 text-gray-700 dark:text-gray-300;
+}
+
+.article-content a {
+  @apply text-primary-600 dark:text-primary-400 hover:underline;
+}
+
+.article-content img {
+  @apply max-w-full h-auto rounded-lg my-4;
+}
+
+.article-content ul,
+.article-content ol {
+  @apply ml-6 mb-4;
+}
+
+.article-content li {
+  @apply mb-2 text-gray-700 dark:text-gray-300;
+}
+
+/* Infobox styles */
+.infobox {
+  @apply float-right ml-4 mb-4 bg-gray-100 dark:bg-dark-card border-2 border-primary-400 dark:border-primary-600 rounded-lg p-4 w-72;
+}
+
+.infobox-title {
+  @apply text-lg font-bold text-center mb-3 text-gray-900 dark:text-white;
+}
+
+.infobox-row {
+  @apply mb-2 flex justify-between border-b border-gray-300 dark:border-gray-600 pb-2;
+}
+
+.infobox-label {
+  @apply font-semibold text-gray-700 dark:text-gray-300;
+}
+
+.infobox-value {
+  @apply text-gray-600 dark:text-gray-400;
+}
+
+/* Card hover effect */
+.card-hover {
+  @apply hover:shadow-lg hover:scale-105 transition-all duration-300;
+}
+
+/* Breadcrumb styles */
+.breadcrumb {
+  @apply flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-4;
+}
+
+.breadcrumb a {
+  @apply text-primary-600 dark:text-primary-400 hover:underline;
+}
+
+/* Table of contents */
+.toc {
+  @apply bg-gray-50 dark:bg-dark-card p-4 rounded-lg mb-6 border-l-4 border-primary-500;
+}
+
+.toc-title {
+  @apply font-bold text-gray-900 dark:text-white mb-2;
+}
+
+.toc-list {
+  @apply ml-4 space-y-1;
+}
+
+.toc-list a {
+  @apply text-primary-600 dark:text-primary-400 hover:underline text-sm;
+}
